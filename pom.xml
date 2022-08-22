@@ -3,14 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-<<<<<<< HEAD
-    <groupId>com.ram</groupId>
-    <artifactId>my-WebApp</artifactId>
-=======
     <groupId>com.webapp</groupId>
-    <artifactId>docker-spring-boot</artifactId>
->>>>>>> f30060a (updated sonar and some code changes)
+    <artifactId>my-webApp</artifactId>
     <version>1.0</version>
     <name>docker-spring-boot</name>
     <url></url>
@@ -26,26 +20,11 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <java.version>11</java.version>
-<<<<<<< HEAD
         <project.test.result.directory>${project.build.directory}/test-results</project.test.result.directory>
         <sonar.host.url>http://18.191.180.116:9000/</sonar.host.url>
         <sonar.login>admin</sonar.login>
         <sonar.password>ram@3037</sonar.password>
         <sonar.projectBaseDir>/home/ubuntu/sonar</sonar.projectBaseDir>
-=======
-                <!-- test result measurements -->
-                <project.test.result.directory>${project.build.directory}/test-results</project.test.result.directory>
-                <sonar.host.url>http://18.191.180.116:9000</sonar.host.url>
-                <sonar.login>admin</sonar.login>
-                <sonar.password>ram@3037</sonar.password>
-                <sonar.projectBaseDir>/home/ubuntu/sonar</sonar.projectBaseDir>
-                <sonar.scm.provider>git</sonar.scm.provider>
-                <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
-                <sonar.coverage.jacoco.xmlReportPaths>${project.test.result.directory}/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-                <sonar.exclusions>
-                        **/*.xml
-                </sonar.exclusions>
->>>>>>> f30060a (updated sonar and some code changes)
     </properties>
 
     <dependencies>
