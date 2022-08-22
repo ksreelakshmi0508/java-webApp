@@ -1,37 +1,45 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-WebApp-service
+  name: server
+  labels:
+    app: server
+    service: server
 spec:
   type: LoadBalancer
   ports:
-   - name: "http-port"
-     protocol: "TCP"
-     port: 5001
+  - port: 5001
+    name: http
   selector:
-    app: my-WebApp
+    app: server
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 
-    my-WebApp
+  name: server
+  labels:
+    version: v1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-WebApp
+      app: server
+      version: v1
   template:
     metadata:
       labels:
-        app: my-WebApp
+        app: server
+        version: v1
     spec:
       containers:
-      - name: java-spring-web
+      - name: server
         image: <+artifact.image>
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
         env:
-          - name: SPRING_PROFILES_ACTIVE
-            value: "dev"
+        - name: ATLAS_URI
+          value: dev
+        resources:
+          requests:
+            cpu: "100m"
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5001
