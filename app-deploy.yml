@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: <+artifact.image>
+        image: harnesspoc01/harness-repo
         env:
         - name: ATLAS_URI
           value: dev
