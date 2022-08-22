@@ -34,9 +34,6 @@ spec:
       containers:
       - name: server
         image: {{.Values.server_image}}
-        env:
-        - name: ATLAS_URI
-          value: {{.Values.atlas_uri}}
         resources:
           requests:
             cpu: "100m"
