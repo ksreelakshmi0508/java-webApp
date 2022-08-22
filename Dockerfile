@@ -3,7 +3,7 @@ RUN mkdir -p /build
 WORKDIR /build
 COPY pom.xml /build
 COPY src /build/src
-RUN mvn package
+RUN mvn clean package sonar:sonar
 
 
 FROM openjdk:11-slim as runtime
