@@ -75,12 +75,7 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-<<<<<<< HEAD
-        </plugins>
-    </build>
-</project>
-=======
-                        <plugin>
+            <plugin>
                                 <groupId>org.jacoco</groupId>
                                 <artifactId>jacoco-maven-plugin</artifactId>
                                 <version>0.8.5</version>
@@ -112,4 +107,4 @@
     </build>
 </project>
 
->>>>>>> f30060a (updated sonar and some code changes)
+
