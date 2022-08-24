@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: javaspring
-        image: harnesspoc01/harness-repo:latest
+        image: {{.Values.server_image}}
         resources:
           requests:
             cpu: 100m
