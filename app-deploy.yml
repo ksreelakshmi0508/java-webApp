@@ -21,7 +21,6 @@ metadata:
   name: my-app
   labels:
     app: my-app
-	
 spec:
   replicas: 1
   selector:
@@ -33,7 +32,7 @@ spec:
         app: my-app
     spec:
       containers:
-	  - name: springboot
+      - name: springboot
         image: harnesspoc01/springboot:latest
         imagePullPolicy: Always
         ports:
