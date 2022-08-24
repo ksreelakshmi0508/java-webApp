@@ -1,52 +1,40 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mywebapp
+  name: my-app
   labels:
-    app: javaspring
-    tier: mywebapp
+    app: my-app
+
 spec:
-  # comment or delete the following line if you want to use a LoadBalancer
-  type: LoadBalancer
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  # type: LoadBalancer
+  type: NodePort
   ports:
   - port: 8080
+    protocol: TCP
+    targetPort: 8080
   selector:
-    app: javaspring
-    tier: mywebwpp
+    app: my-app
+
 ---
-apiVersion: apps/v1 #  for k8s versions before 1.9.0 use apps/v1beta2  and before 1.8.0 use extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: javaspring
+  name: my-app
+  labels:
+    app: my-app
+	
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: javaspring
-      tier: mywebapp
-  replicas: 2
+      app: my-app
   template:
     metadata:
       labels:
-        app: javaspring
-        tier: mywebapp
+        app: my-app
     spec:
       containers:
-      - name: javaspring
+	  - name: springboot
         image: harnesspoc01/springboot:latest
-        resources:
-          requests:
-            cpu: 100m
-            memory: 100Mi
-        env:
-        - name: GET_HOSTS_FROM
-          value: dns
-          # If your cluster config does not include a dns service, then to
-          # instead access environment variables to find service host
-          # info, comment out the 'value: dns' line above, and uncomment the
-          # line below:
-          # value: env
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
