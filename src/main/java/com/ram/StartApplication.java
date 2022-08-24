@@ -12,7 +12,7 @@ public class StartApplication {
 
     @GetMapping("/")
     public String index(final Model model) {
-        model.addAttribute("title", "Welcome to Harness World");
+        model.addAttribute("title", "Welcome to DevOps World");
         model.addAttribute("msg", "Harness the NextGen DevOps continous Delivery Platform");
         return "index";
     }
