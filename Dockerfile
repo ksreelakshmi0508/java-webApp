@@ -1,16 +1,6 @@
-FROM maven:3-jdk-11 as builder
-RUN mkdir -p /build
-WORKDIR /build
-COPY pom.xml /build
-COPY src /build/src
-RUN mvn clean package sonar:sonar
-
-
-FROM openjdk:11-slim as runtime
+FROM openjdk:11-slim
 EXPOSE 8090
-#Set app home folder
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+RUN mkdir /app
+WORKDIR /app
 COPY --from=builder /build/target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
