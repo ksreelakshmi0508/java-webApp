@@ -12,7 +12,7 @@ spec:
   # an external load-balanced IP for the frontend service.
   # type: LoadBalancer
   ports:
-  - port: 8090
+  - port: 8080
   selector:
     app: javaspring
     tier: mywebwpp
@@ -49,4 +49,4 @@ spec:
           # line below:
           # value: env
         ports:
-        - containerPort: 8090
+        - containerPort: 8080
