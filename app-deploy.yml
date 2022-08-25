@@ -1,5 +1,3 @@
-#@ load("@ytt:data", "data")
----
 apiVersion: v1
 kind: Service
 metadata:
@@ -35,7 +33,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: #@ data.values.image_name
+        image: harnesspoc01/springboot: {{.Values.tag_name}}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
