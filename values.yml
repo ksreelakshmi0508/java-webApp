@@ -1,1 +1,1 @@
-tag_name: <+pipeline.name>_<+pipeline.sequenceId>
+tag_name: <+pipeline.sequenceId>
