@@ -1,3 +1,2 @@
-server_image: <+artifact.image>
-deployment_replicas: 1
-container_port: 5001
+tag_name: <+pipeline.name>_<+pipeline.sequenceId>
+
