@@ -1,3 +1,2 @@
-image_name: harnesspoc01/springboot
-tag_name: <+pipeline.name>_<+pipeline.sequenceId>
-
+#@data/values
+image_name: harnesspoc01/springboot:<+pipeline.name>_<+pipeline.sequenceId>
