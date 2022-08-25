@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: harnesspoc01/springboot:latest01
+        image: harnesspoc01/springboot:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
