@@ -6,7 +6,7 @@
     <groupId>com.webapp</groupId>
     <artifactId>my-webApp</artifactId>
     <version>1.0</version>
-    <name>docker-spring-boot</name>
+    <name>helm-testing</name>
     <url></url>
 
     <parent>
