@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: harnesspoc01/springboot: {{.Values.tag_name}}
+        image: sreelk589/sonar-demo: {{.Values.tag_name}}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
