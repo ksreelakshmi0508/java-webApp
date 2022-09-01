@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: sreelk589/sonar-demo: {{.Values.tag_name}}
+        image: sreelk589/sonar-demo:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
